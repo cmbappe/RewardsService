@@ -8,8 +8,18 @@ In addition, for every dollar spent over $100, the customer receives another poi
 Ex: for a $120 purchase, the customer receives
 (120 - 50) x 1 + (120 - 100) x 1 = 90 points
 
-
 Given a record of every transaction during a three-month period, calculate the reward points earned for each customer per month and total. 
+
+### How to run this project
+1. Download and install Docker & Maven
+2. Clone this project
+3. Go to the root of the project
+4. Build the artifact
+`` RewardsService > mvn clean package``
+5. Build docker image
+`` RewardsService > docker build --tag=rewards-service:latest . ``
+6. Run docker container
+`` RewardsService > docker run -p 8080:8080 rewards-service:latest ``
 
 Tables and initial data
 
