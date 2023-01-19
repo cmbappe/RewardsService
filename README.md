@@ -36,11 +36,24 @@ Transaction
 Endpoints:
 - http://localhost:8080/rewards-service/customers/{id} (Get customer's total points)
 Example: http://localhost:8080/rewards-service/customers/1
-         Result: {"customer":{"id":1,"name":"Christian Mbappe"},"points":110}
+  ![Total points Customer 1 ](assets/total_points_customer_1.png?raw=true "Total points Customer 1")
+  Example: http://localhost:8080/rewards-service/customers/3
+  ![Total points Customer 3 ](assets/total_points_customer_3.png?raw=true "Total points Customer 3")
+  Example: http://localhost:8080/rewards-service/customers/5
+  ![Customer not found ](assets/customer_not_found_message.png?raw=true "Customer not found")
 
 - http://localhost:8080/rewards-service/customers/{id}/{month} (Get customer's points of the month)
-Example: http://localhost:8080/rewards-service/customers/3/12
-         Result: {"customer":{"id":3,"name":"Allie Burnrow"},"points":50}
+Example: http://localhost:8080/rewards-service/customers/1/1
+  ![Monthly points Customer 1 month 1 ](assets/monthly_points_customer_1_month_1.png?raw=true "Monthly points Customer 1 month 1")
+  Example: http://localhost:8080/rewards-service/customers/3/4
+  ![Month not found ](assets/month_not_found_message.png?raw=true "Month not found")
 
 - http://localhost:8080/swagger-ui/index.html (Api documentation)
+  ![Api Documentation](assets/api_documentation.png?raw=true "Api documentation")
+
 - http://localhost:8080/actuator/health (Api health check)
+  ![Health check](assets/health_check.png?raw=true "Health check")
+
+Unit Tests
+
+![Unit Tests](assets/Unit_tests.png?raw=true "Unit tests")
