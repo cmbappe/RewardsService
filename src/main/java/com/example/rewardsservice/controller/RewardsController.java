@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-/**
- *
- */
 @RestController
 public class RewardsController {
     @Autowired
@@ -29,7 +26,11 @@ public class RewardsController {
     @Autowired
     RewardsService rewardsService;
 
-
+    /**
+     * Takes a customer id and returns his total number of points as ResponseEntity<CustomerPoints>
+     * @param id
+     * @return ResponseEntity<CustomerPoints>
+     */
     @GetMapping("/rewards-service/customers/{id}")
     public ResponseEntity<CustomerPoints> getCustomerTotalReward(@PathVariable Long id) {
         Optional<Customer> customer = customerService.getOneById(id);
@@ -41,8 +42,14 @@ public class RewardsController {
         return new ResponseEntity<>( new CustomerPoints(customer.get(), totalPoints), HttpStatus.OK);
     }
 
+    /**
+     * Takes a customer id number and month and returns the customer's total points of the month as ResponseEntity<CustomerPoints>
+     * @param id
+     * @param month
+     * @return ResponseEntity<CustomerPoints>
+     */
     @GetMapping("/rewards-service/customers/{id}/{month}")
-    public ResponseEntity<CustomerPoints> getCustomerMonthlyReward(@PathVariable Long id, @PathVariable Integer month) throws Exception {
+    public ResponseEntity<CustomerPoints> getCustomerMonthlyReward(@PathVariable Long id, @PathVariable Integer month) {
         Optional<Customer> customer = customerService.getOneById(id);
         if(!customer.isPresent()){
             throw new CustomerNotFoundException(String.format("Customer %s not found", id));
