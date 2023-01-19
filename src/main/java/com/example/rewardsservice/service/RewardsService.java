@@ -22,7 +22,7 @@ public class RewardsService {
         return ComputePoints(transactionList);
     }
     private Integer ComputePoints(List<Transaction> transactionList) {
-        if(transactionList == null)
+        if(transactionList == null || transactionList.isEmpty())
             return 0;
         Integer totalPoints = 0;
         for(Transaction transaction : transactionList){

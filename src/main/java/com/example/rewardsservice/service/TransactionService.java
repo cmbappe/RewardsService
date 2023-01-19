@@ -25,6 +25,10 @@ public class TransactionService {
     public List<Transaction> getTransactionsByCustomerAndTransactionMonth(Customer customer, Integer month){
         return repo.getTransactionsByCustomerAndTransactionMonth(customer, month);
     }
+
+    public List<Transaction> findbyMonth(Integer month){
+        return repo.findByMonth(month);
+    }
     public void save(Transaction transaction){
         repo.save(transaction);
     }

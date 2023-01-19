@@ -2,6 +2,8 @@ package com.example.rewardsservice.entity;
 
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +20,7 @@ public class Customer {
     private String name;
 
     @OneToMany(mappedBy = "customer")
+    @JsonIgnore
     private List<Transaction> transactions;
 
     public Customer(String name){
